@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './properites.component.html',
   styleUrls: ['./properites.component.scss'],
 })
-export class ProperitesComponent implements OnInit {
+export class ProperitesComponent {
   contaier = d3.select('#container');
   svg = this.contaier.append('svg');
   viewableAreaWidth = 300;
