@@ -18,11 +18,32 @@ export class ProperitesComponent implements OnInit {
     .attr('fill', 'navy');
   rectWidth = 50;
   rectHeight = 50;
-  firstRect = this.scrollRect
+  rectSpacing = 100;
+  rectYposition = 80;
+  firstRect = this.scrollGroup
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
-    .attr('x', 30);
+    .attr('x', 1 * this.rectSpacing)
+    .attr('y', this.rectYposition);
+  secondRect = this.scrollGroup
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 2 * this.rectSpacing)
+    .attr('y', this.rectYposition);
+  thirdRect = this.scrollGroup
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 3 * this.rectSpacing)
+    .attr('y', this.rectYposition);
+  thirdRect = this.scrollGroup
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 3 * this.rectSpacing)
+    .attr('y', this.rectYposition);
 
   constructor() {}
 
