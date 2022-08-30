@@ -22,5 +22,7 @@ export class MethodsComponent extends ProperitesComponent {
     });
   }
 
+  handleScrollBar(displacement: number) {}
+
   handleScrollTranslation() {}
 }
