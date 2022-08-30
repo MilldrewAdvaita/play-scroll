@@ -21,6 +21,7 @@ export class MethodsComponent extends ProperitesComponent {
         this.scrollYdisplacement = -210;
         console.log('greater than 210');
       } else if (this.scrollYdisplacement >= 0 && wheelEvent.deltaY > 0) {
+      } else {
         this.scrollYdisplacement += wheelEvent.deltaY;
       }
 
