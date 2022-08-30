@@ -14,17 +14,20 @@ export class MethodsComponent extends ProperitesComponent {
 
   handleWheelScroll() {
     this.scrollGroup.on('wheel', (wheelEvent: WheelEvent) => {
-      this.scrollYdisplacement += wheelEvent.deltaY;
+      if (this.scrollYdisplacement <= 210 || wheelEvent.deltaY < 0) {
+        this.scrollYdisplacement += wheelEvent.deltaY;
+      } else {
+        this.scrollYdisplacement = 210;
+      }
+
       this.scrollableContent.attr(
         'transform',
         `translate(${this.scrollYdisplacement})`
       );
+      this.scrollBar.attr(
+        'transform',
+        `translate(${-this.scrollYdisplacement})`
+      );
     });
   }
-
-  handleScrollBar(displacement: number) {
-    this.scrollBar.attr('transform', `translate(${this.scrollYdisplacement})`);
-  }
-
-  handleScrollTranslation() {}
 }
