@@ -10,13 +10,19 @@ export class ProperitesComponent implements OnInit {
   contaier = d3.select('#container');
   svg = this.contaier.append('svg');
   noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
-  scrollRect = this.svg
-    .append('rect')
+  scrollGroup = this.svg
+    .append('g')
     .attr('width', 8000)
     .attr('height', 200)
     .attr('x', 80)
     .attr('fill', 'navy');
-  content = scroll;
+  rectWidth = 50;
+  rectHeight = 50;
+  firstRect = this.scrollRect
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 30);
 
   constructor() {}
 
