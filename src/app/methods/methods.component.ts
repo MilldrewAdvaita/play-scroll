@@ -9,5 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class MethodsComponent extends ProperitesComponent {
   constructor() {
     super();
+    this.handleWheelScroll();
   }
+
+  handleWheelScroll() {
+    this.scrollGroup.on('wheel', (wheelEvent: WheelEvent) => {
+      this.scrollYdisplacement += wheelEvent.deltaY;
+      this.scrollableContent.attr(
+        'transform',
+        `translate(${this.scrollYdisplacement})`
+      );
+    });
+  }
+
+  handleScrollTranslation() {}
 }

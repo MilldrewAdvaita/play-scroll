@@ -11,20 +11,22 @@ export class ProperitesComponent implements OnInit {
   svg = this.contaier.append('svg');
   viewableAreaWidth = 300;
   viewableAreaHeight = 200;
+  scrollXdisplacement = 0;
+  scrollYdisplacement = 0;
   backDrop = this.svg
     .append('rect')
     .attr('id', 'backDrop')
     .attr('height', this.viewableAreaHeight)
     .attr('width', this.viewableAreaWidth)
     .attr('fill', 'blue');
-  noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
   scrollGroup = this.svg
     .append('g')
     .attr('width', 8000)
     .attr('height', 200)
     .attr('x', 80)
     .attr('fill', 'green')
-    .attr('clip-path', 'url(#clipPath)');
+    .attr('clip-path', 'url(#clipPath)')
+    .attr('id', 'scrollGroup');
 
   scrollHook = this.scrollGroup
     .append('rect')
@@ -32,7 +34,9 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.viewableAreaHeight)
     .attr('opacity', 0);
 
-  scrollableContent = this.scrollGroup.append('g');
+  scrollableContent = this.scrollGroup
+    .append('g')
+    .attr('id', 'scrollableContent');
 
   rectWidth = 50;
   rectHeight = 50;
@@ -82,6 +86,7 @@ export class ProperitesComponent implements OnInit {
     .attr('width', this.viewableAreaWidth)
     .attr('height', this.viewableAreaHeight);
 
+  noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
   constructor() {}
 
   ngOnInit(): void {}
