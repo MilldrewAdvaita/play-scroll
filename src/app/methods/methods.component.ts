@@ -35,8 +35,13 @@ export class MethodsComponent extends ProperitesComponent {
     });
   }
   handleDrag() {
+    this.scrollBar;
     console.log('hello from handle drag');
-    const dragBehavior = d3.drag().on('drag', (mouseEvent: any) => {});
+    let xDisplacement = 0;
+    const dragBehavior = d3.drag().on('drag', (dragEvent: DragEvent) => {
+      xDisplacement += -1;
+      this.scrollBar.attr('transform', `translate(${xDisplacement})`);
+    });
     this.scrollBar.call(dragBehavior);
   }
 }
