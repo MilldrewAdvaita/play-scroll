@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./properites.component.scss'],
 })
 export class ProperitesComponent implements OnInit {
+  contaier = d3.select('#container');
+  svg = this.contaier.append('svg');
+  noScrollRect = this.svg.append('rect').attr('width', 200).attr('height', 200);
   constructor() {}
 
   ngOnInit(): void {}
