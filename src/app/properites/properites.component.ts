@@ -38,11 +38,17 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.rectHeight)
     .attr('x', 3 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  thirdRect = this.scrollGroup
+  fourthRect = this.scrollGroup
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
-    .attr('x', 3 * this.rectSpacing)
+    .attr('x', 4 * this.rectSpacing)
+    .attr('y', this.rectYposition);
+  fifthRect = this.scrollGroup
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 4 * this.rectSpacing)
     .attr('y', this.rectYposition);
 
   constructor() {}
