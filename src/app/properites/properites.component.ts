@@ -86,6 +86,14 @@ export class ProperitesComponent implements OnInit {
     .attr('width', this.viewableAreaWidth)
     .attr('height', this.viewableAreaHeight);
 
+  scrollBar = this.svg
+    .append('rect')
+    .attr('y', this.viewableAreaHeight - 10)
+    .attr('x', 80)
+    .attr('height', 10)
+    .attr('width', 10)
+    .attr('fill', 'gray');
+
   noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
   constructor() {}
 
