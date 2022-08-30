@@ -32,41 +32,43 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.viewableAreaHeight)
     .attr('opacity', 0);
 
+  scrollableContent = this.scrollGroup.append('g');
+
   rectWidth = 50;
   rectHeight = 50;
   rectSpacing = 100;
   rectYposition = 75;
-  firstRect = this.scrollGroup
+  firstRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
     .attr('x', 1 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  secondRect = this.scrollGroup
+  secondRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
     .attr('x', 2 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  thirdRect = this.scrollGroup
+  thirdRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
     .attr('x', 3 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  fourthRect = this.scrollGroup
+  fourthRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
     .attr('x', 4 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  fifthRect = this.scrollGroup
+  fifthRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
     .attr('x', 5 * this.rectSpacing)
     .attr('y', this.rectYposition);
-  sixthRect = this.scrollGroup
+  sixthRect = this.scrollableContent
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
