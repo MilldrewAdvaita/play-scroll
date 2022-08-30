@@ -48,7 +48,7 @@ export class ProperitesComponent implements OnInit {
     .append('rect')
     .attr('width', this.rectWidth)
     .attr('height', this.rectHeight)
-    .attr('x', 4 * this.rectSpacing)
+    .attr('x', 5 * this.rectSpacing)
     .attr('y', this.rectYposition);
 
   constructor() {}
