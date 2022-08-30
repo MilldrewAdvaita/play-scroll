@@ -34,6 +34,7 @@ export class MethodsComponent extends ProperitesComponent {
       );
     });
   }
+
   handleDrag() {
     console.log('hello from handle drag');
     const dragBehavior = d3.drag().on('drag', (dragEvent: DragEvent) => {
@@ -46,7 +47,16 @@ export class MethodsComponent extends ProperitesComponent {
       }
 
       this.scrollBar.attr('transform', `translate(${position})`);
+      this.scrollableContent.attr('transform', `translate(${-position})`);
     });
     this.scrollBar.call(dragBehavior);
+  }
+
+  convertScrollBarDisplacmentToWheel(
+    barPosition: number,
+    barPositionMax: number,
+    wheelDisplacmentMax: number
+  ) {
+    translateValue = barPosition * (barPositionMax / wheelDisplacmentMax);
   }
 }
