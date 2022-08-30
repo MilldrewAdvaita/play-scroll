@@ -10,10 +10,12 @@ export class MethodsComponent extends ProperitesComponent {
   constructor() {
     super();
     this.handleWheelScroll();
+    this.handleDrag();
   }
 
   handleWheelScroll() {
     this.scrollGroup.on('wheel', (wheelEvent: WheelEvent) => {
+      wheelEvent.stopPropagation();
       console.log(this.scrollYdisplacement);
       console.log(this.scrollYdisplacement <= -210);
       console.log(wheelEvent.deltaY > 0);
@@ -35,4 +37,5 @@ export class MethodsComponent extends ProperitesComponent {
       );
     });
   }
+  handleDrag() {}
 }
