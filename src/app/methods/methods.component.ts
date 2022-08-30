@@ -37,8 +37,13 @@ export class MethodsComponent extends ProperitesComponent {
   handleDrag() {
     console.log('hello from handle drag');
     const dragBehavior = d3.drag().on('drag', (dragEvent: DragEvent) => {
-      const position = dragEvent.x - 87;
+      let position = dragEvent.x - 87;
       console.log(position);
+      if (position >= 210) {
+        position = 210;
+      } else if (position <= 0) {
+        position = 0;
+      }
 
       this.scrollBar.attr('transform', `translate(${position})`);
     });
