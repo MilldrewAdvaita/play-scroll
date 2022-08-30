@@ -36,10 +36,7 @@ export class MethodsComponent extends ProperitesComponent {
   }
   handleDrag() {
     console.log('hello from handle drag');
-    const dragBehavior = d3.drag().on('drag', (mouseEvent: any) => {
-      console.log('hello from drag event');
-      console.log(mouseEvent.x);
-    });
+    const dragBehavior = d3.drag().on('drag', (mouseEvent: any) => {});
     this.scrollBar.call(dragBehavior);
   }
 }
