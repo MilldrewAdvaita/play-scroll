@@ -39,6 +39,6 @@ export class MethodsComponent extends ProperitesComponent {
     });
   }
   handleDrag() {
-    const dragBehavior = d3.drag().on('drag');
+    const dragBehavior = d3.drag().on('drag').;
   }
 }
