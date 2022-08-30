@@ -9,17 +9,27 @@ import { Component, OnInit } from '@angular/core';
 export class ProperitesComponent implements OnInit {
   contaier = d3.select('#container');
   svg = this.contaier.append('svg');
+  viewableAreaWidth = 300;
+  viewableAreaHeight = 200;
+  backDrop = this.svg
+    .append('rect')
+    .attr('id', 'backDrop')
+    .attr('height', this.viewableAreaHeight)
+    .attr('width', this.viewableAreaWidth)
+    .attr('fill', 'blue');
   noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
   scrollGroup = this.svg
     .append('g')
     .attr('width', 8000)
     .attr('height', 200)
     .attr('x', 80)
-    .attr('fill', 'navy');
+    .attr('fill', 'green')
+    .attr('clip-path', 'url(#clipPath)');
+
   rectWidth = 50;
   rectHeight = 50;
   rectSpacing = 100;
-  rectYposition = 80;
+  rectYposition = 75;
   firstRect = this.scrollGroup
     .append('rect')
     .attr('width', this.rectWidth)
@@ -57,12 +67,11 @@ export class ProperitesComponent implements OnInit {
     .attr('x', 6 * this.rectSpacing)
     .attr('y', this.rectYposition);
   clipPath = this.svg.append('clipPath').attr('id', 'clipPath');
-  viewableAreaWidth = 200;
-  viewableAreaHeight = 200;
   viewableArea = this.clipPath
     .append('rect')
     .attr('id', 'viewableArea')
-    .attr('width');
+    .attr('width', this.viewableAreaWidth)
+    .attr('height', this.viewableAreaHeight);
 
   constructor() {}
 
