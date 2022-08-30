@@ -26,6 +26,12 @@ export class ProperitesComponent implements OnInit {
     .attr('fill', 'green')
     .attr('clip-path', 'url(#clipPath)');
 
+  scrollHook = this.scrollGroup
+    .append('rect')
+    .attr('width', this.viewableAreaWidth)
+    .attr('height', this.viewableAreaHeight)
+    .attr('opacity', 0);
+
   rectWidth = 50;
   rectHeight = 50;
   rectSpacing = 100;
@@ -66,6 +72,7 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.rectHeight)
     .attr('x', 6 * this.rectSpacing)
     .attr('y', this.rectYposition);
+
   clipPath = this.svg.append('clipPath').attr('id', 'clipPath');
   viewableArea = this.clipPath
     .append('rect')
