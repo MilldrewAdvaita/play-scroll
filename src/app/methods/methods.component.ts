@@ -17,12 +17,8 @@ export class MethodsComponent extends ProperitesComponent {
   handleWheelScroll() {
     this.scrollGroup.on('wheel', (wheelEvent: WheelEvent) => {
       wheelEvent.stopPropagation();
-      console.log(this.scrollYdisplacement);
-      console.log(this.scrollYdisplacement <= -210);
-      console.log(wheelEvent.deltaY > 0);
       if (this.scrollYdisplacement <= -210 && wheelEvent.deltaY < 0) {
         this.scrollYdisplacement = -210;
-        console.log('greater than 210');
       } else if (this.scrollYdisplacement >= 0 && wheelEvent.deltaY > 0) {
       } else {
         this.scrollYdisplacement += wheelEvent.deltaY;
@@ -39,6 +35,11 @@ export class MethodsComponent extends ProperitesComponent {
     });
   }
   handleDrag() {
-    const dragBehavior = d3.drag().on('drag').;
+    console.log('hello from handle drag');
+    const dragBehavior = d3.drag().on('drag', (mouseEvent: any) => {
+      console.log('hello from drag event');
+      console.log(mouseEvent.x);
+    });
+    this.scrollBar.call(dragBehavior);
   }
 }
