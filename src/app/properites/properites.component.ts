@@ -96,6 +96,5 @@ export class ProperitesComponent {
 
   noScrollRect = this.svg.append('rect').attr('width', 80).attr('height', 200);
   constructor() {}
-
   ngOnInit(): void {}
 }
