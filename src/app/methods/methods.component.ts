@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 import { ProperitesComponent } from '../properites/properites.component';
 import { Component, OnInit } from '@angular/core';
 
@@ -37,5 +38,7 @@ export class MethodsComponent extends ProperitesComponent {
       );
     });
   }
-  handleDrag() {}
+  handleDrag() {
+    const dragBehavior = d3.drag().on('drag');
+  }
 }
