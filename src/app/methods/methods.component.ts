@@ -14,10 +14,14 @@ export class MethodsComponent extends ProperitesComponent {
 
   handleWheelScroll() {
     this.scrollGroup.on('wheel', (wheelEvent: WheelEvent) => {
-      if (this.scrollYdisplacement <= 210 || wheelEvent.deltaY < 0) {
+      console.log(this.scrollYdisplacement);
+      console.log(this.scrollYdisplacement <= -210);
+      console.log(wheelEvent.deltaY > 0);
+      if (this.scrollYdisplacement <= -210 && wheelEvent.deltaY < 0) {
+        this.scrollYdisplacement = -210;
+        console.log('greater than 210');
+      } else if (this.scrollYdisplacement >= 0 && wheelEvent.deltaY > 0) {
         this.scrollYdisplacement += wheelEvent.deltaY;
-      } else {
-        this.scrollYdisplacement = 210;
       }
 
       this.scrollableContent.attr(
