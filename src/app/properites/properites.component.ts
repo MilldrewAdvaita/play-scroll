@@ -50,7 +50,12 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.rectHeight)
     .attr('x', 5 * this.rectSpacing)
     .attr('y', this.rectYposition);
-
+  sixthRect = this.scrollGroup
+    .append('rect')
+    .attr('width', this.rectWidth)
+    .attr('height', this.rectHeight)
+    .attr('x', 6 * this.rectSpacing)
+    .attr('y', this.rectYposition);
   constructor() {}
 
   ngOnInit(): void {}
