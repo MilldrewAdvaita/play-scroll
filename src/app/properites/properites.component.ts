@@ -56,6 +56,14 @@ export class ProperitesComponent implements OnInit {
     .attr('height', this.rectHeight)
     .attr('x', 6 * this.rectSpacing)
     .attr('y', this.rectYposition);
+  clipPath = this.svg.append('clipPath').attr('id', 'clipPath');
+  viewableAreaWidth = 200;
+  viewableAreaHeight = 200;
+  viewableArea = this.clipPath
+    .append('rect')
+    .attr('id', 'viewableArea')
+    .attr('width');
+
   constructor() {}
 
   ngOnInit(): void {}
