@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './methods.component.html',
   styleUrls: ['./methods.component.scss'],
 })
-export class MethodsComponent extends ProperitesComponent implements OnInit {
+export class MethodsComponent extends ProperitesComponent {
   constructor() {
     super();
   }
-  ngOnInit(): void {}
 }
